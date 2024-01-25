@@ -65,16 +65,19 @@ app.get('/add', (req, res) => {
 });
 
 app.post('/add', (req, res) => {
-  const result = req
-  console.log(req.body)
+  const result = req.body
+  const employeeNum = `"${parseInt(result.employeeNum)}"`
+  const employeeName = `"${result.employeeName}"`
+  const employeeAddress = `"${result.employeeAddress}"`
+  const employeeSalary = `"${parseFloat(result.employeeSalary)}"`
+  const employeeRole = `"${result.employeeRole}"`
+  
+  const insertQuery = `INSERT INTO Employee(Name, Address, Salary, Employee_Number, Role) VALUES (${employeeName}, ${employeeAddress}, ${employeeSalary}, ${employeeNum}, ${employeeRole})`
+  console.log(insertQuery)
 
-  /*
-  console.log('Employee Number:', employeeNum);
-  console.log('Employee Name:', employeeName);
-  console.log('Employee Address:', employeeAddress);
-  console.log('Employee Salary:', employeeSalary);
-  */
-
-
-  res.redirect('/add')
+  connection.query(insertQuery , (error, result) => {
+    console.log(error)
+    res.redirect('/viewEmployee')
+  })
+  
 });
