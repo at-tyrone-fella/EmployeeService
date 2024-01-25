@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Employees</title>
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+
+    <nav class="navbar">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="viewEmployee.html">View Employees</a></li>
+          <li><a href="#">Add New Employee</a></li>
+        </ul>
+      </nav>
+
+    <h1>All Employees</h1>
+
+    <div></div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Employee ID</th>
+          <th>Name</th>
+          <th>Address</th>
+          <th>Role</th>
+          <th>Salary</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <% for (var i = 0; i < employees.length; i++) { %>
+            <tr>
+                <td><%= employees[i].Employee_Id %></td>
+                <td><%= employees[i].Name %></td>
+                <td><%= employees[i].Address %></td>
+                <td><%= employees[i].Salary %></td>
+                <td><%= employees[i].Role %></td>
+                <td><%= employees[i].Employee_Number %></td>
+            </tr>
+        <% } %>
+
+      </tbody>
+    </table>
+    
+</body>
+</html>

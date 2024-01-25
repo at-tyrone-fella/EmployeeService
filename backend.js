@@ -51,5 +51,5 @@ app.get('/', (req, res) => {
     employees: query_result
   };
  
-    res.render('index', data);
+    res.render('viewEmployee.html', data);
 });
