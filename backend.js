@@ -2,12 +2,16 @@ const express = require('express')
 const http = require("http")
 const path = require("path")
 const mysql = require("mysql2")
+const bodyParser = require('body-parser');
 
 const app = express()
 const port = 3000
 
 app.set('view engine', 'ejs')
 app.use('/public', express.static('public'));
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // connect to d
 const connection = mysql.createConnection({
@@ -27,13 +31,6 @@ connection.connect((err) => {
     }
     console.log('Connected to MySQL');
 });
-/*
-
-// route
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '/index.html'))
-})
-*/
 
 // listen
 app.listen(port, () => {
@@ -42,21 +39,42 @@ app.listen(port, () => {
 
 let query_result = 0
 
-connection.query('SELECT * FROM Employee', (error, results) => {
-    query_result = results
-    console.log(query_result)
-})
 
 
 app.get('/', (req, res) => {
     res.render('index');
 });
 
-
 app.get('/viewEmployee', (req, res) => {
+
+  connection.query('SELECT * FROM Employee', (error, results) => {
+    const data = {
+      employees: results
+    };
+    res.render('viewEmployee', data);
+  })
+
+});
+
+app.get('/add', (req, res) => {
   const data = {
     employees: query_result
   };
  
-    res.render('viewEmployee', data);
+    res.render('add', data);
+});
+
+app.post('/add', (req, res) => {
+  const result = req.body;
+  console.log(result)
+
+  /*
+  console.log('Employee Number:', employeeNum);
+  console.log('Employee Name:', employeeName);
+  console.log('Employee Address:', employeeAddress);
+  console.log('Employee Salary:', employeeSalary);
+  */
+
+
+  res.redirect('/add')
 });

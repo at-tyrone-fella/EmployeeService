@@ -42,6 +42,7 @@ a {
   color: white;
   font-weight: bold;
 }
+
 .navbar a:hover{
   color: rgb(101, 219, 101);
 }
