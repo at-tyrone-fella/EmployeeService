@@ -65,8 +65,8 @@ app.get('/add', (req, res) => {
 });
 
 app.post('/add', (req, res) => {
-  const result = req.body;
-  console.log(result)
+  const result = req
+  console.log(req.body)
 
   /*
   console.log('Employee Number:', employeeNum);
