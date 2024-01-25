@@ -7,6 +7,7 @@ const app = express()
 const port = 3000
 
 app.set('view engine', 'ejs')
+app.use('/public', express.static('public'));
 
 // connect to d
 const connection = mysql.createConnection({
@@ -46,10 +47,16 @@ connection.query('SELECT * FROM Employee', (error, results) => {
     console.log(query_result)
 })
 
+
 app.get('/', (req, res) => {
+    res.render('index');
+});
+
+
+app.get('/viewEmployee', (req, res) => {
   const data = {
     employees: query_result
   };
  
-    res.render('viewEmployee.html', data);
+    res.render('viewEmployee', data);
 });

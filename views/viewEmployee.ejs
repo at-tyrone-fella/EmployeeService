@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Employees</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/public/style.css" />
 
 </head>
 <body>
 
     <nav class="navbar">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="viewEmployee.html">View Employees</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="viewEmployee">View Employees</a></li>
           <li><a href="#">Add New Employee</a></li>
         </ul>
       </nav>
@@ -36,12 +36,11 @@
 
         <% for (var i = 0; i < employees.length; i++) { %>
             <tr>
-                <td><%= employees[i].Employee_Id %></td>
+                <td><%= employees[i].Employee_Number %></td>
                 <td><%= employees[i].Name %></td>
                 <td><%= employees[i].Address %></td>
-                <td><%= employees[i].Salary %></td>
                 <td><%= employees[i].Role %></td>
-                <td><%= employees[i].Employee_Number %></td>
+                <td>$<%= employees[i].Salary %></td>
             </tr>
         <% } %>
 
