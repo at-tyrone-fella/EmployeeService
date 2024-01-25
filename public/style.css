@@ -46,3 +46,12 @@ a {
 .navbar a:hover{
   color: rgb(101, 219, 101);
 }
+
+.submitButton{
+  margin-top: 10px;
+  background-color: rgb(101, 219, 101);
+  }
+   
+  ::placeholder{
+    font-size: 13px;
+  }
