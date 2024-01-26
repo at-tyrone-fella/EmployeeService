@@ -89,19 +89,26 @@ app.get('/edit', (req, res) => {
 });
  
 app.post('/edit' , (req,res) => {
+
 const result = req.body;
 const employeeNum = `"${parseInt(result.employeeNum)}"`
 const employeeName = `"${result.employeeName}"`
 const employeeAddress = `"${result.employeeAddress}"`
 const employeeSalary = `"${parseFloat(result.employeeSalary)}"`
 const employeeRole = `"${result.employeeRole}"`
- 
+
+if(employeeName == "" || employeeAddress == "" || employeeSalary == "" || employeeRole == "")
+{
+  res.redirect('/viewEmployee')
+}else{
 const insertQuery = `UPDATE Employee SET Name = ${employeeName}, Address = ${employeeAddress}, Role = ${employeeRole}, Employee_Number = ${employeeNum}, Salary = ${employeeSalary} WHERE Employee.Employee_Number = ${employeeNum}`;
- 
+
 connection.query(insertQuery , (error, result) => {
   console.log(error)
-  res.redirect('/viewEmployee')
+  res.redirect('/edit')
 })
- 
 console.log(insertQuery)
+
+}
+ 
 })
