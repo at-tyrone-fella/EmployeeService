@@ -86,6 +86,7 @@ app.post('/add', (req, res) => {
   
 });
 
+/*
 app.use(session({ secret: 'your-secret-key', resave: true, saveUninitialized: true }));
 
 app.use(passport.initialize());
@@ -118,3 +119,36 @@ app.post('/login',
   passport.authenticate('local',
    { successRedirect: '/', failureRedirect: '/login' })
 );
+*/
+
+app.get('/login', (req, res) => {
+  res.render('login')
+})
+
+app.post('/login', (req, res) => {
+  const result = req.body
+  const email = result.email
+  const password = result.password
+  
+  const selectQuery1 = `SELECT * FROM LoginDetails WHERE Email = "${email}"`
+
+  connection.query(selectQuery1, (error, results) => {
+    if (results.length == 0){
+      res.redirect("/login")
+    } else {
+    const userDetails = results
+    const dbEmail = results[0].Email
+    const dbPass = results[0].Password
+
+    console.log(dbEmail)
+    console.log(dbPass)
+
+    if (password == dbPass){
+      res.redirect("/viewEmployee")
+    } else {
+      res.redirect("/login")
+    }
+    }
+  })
+  
+})
