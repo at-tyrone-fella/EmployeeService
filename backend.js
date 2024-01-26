@@ -158,7 +158,7 @@ app.get('/edit', (req, res) => {
     error: ""
   }
   res.render('edit', data);
-});
+})
  
 app.post('/edit' , (req,res) => {
 
@@ -195,7 +195,7 @@ app.post('/delete', (req, res) => {
 const result = req.body
 const employeeNum = result.employeeNum
 
-const deleteQuery = `DELETE FROM Employee WHERE Employee.Employee_Id = ${employeeNum}`
+const deleteQuery = `DELETE FROM Employee WHERE Employee.Employee_Number = ${employeeNum}`
 
 connection.query(deleteQuery, (error, results) => {
   res.redirect("/viewEmployee")
