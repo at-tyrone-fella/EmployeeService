@@ -81,3 +81,27 @@ app.post('/add', (req, res) => {
   })
   
 });
+
+//Edit Feature added below.
+ 
+app.get('/edit', (req, res) => {
+  res.render('edit');
+});
+ 
+app.post('/edit' , (req,res) => {
+const result = req.body;
+const employeeNum = `"${parseInt(result.employeeNum)}"`
+const employeeName = `"${result.employeeName}"`
+const employeeAddress = `"${result.employeeAddress}"`
+const employeeSalary = `"${parseFloat(result.employeeSalary)}"`
+const employeeRole = `"${result.employeeRole}"`
+ 
+const insertQuery = `UPDATE Employee SET Name = ${employeeName}, Address = ${employeeAddress}, Role = ${employeeRole}, Employee_Number = ${employeeNum}, Salary = ${employeeSalary} WHERE Employee.Employee_Number = ${employeeNum}`;
+ 
+connection.query(insertQuery , (error, result) => {
+  console.log(error)
+  res.redirect('/viewEmployee')
+})
+ 
+console.log(insertQuery)
+})
