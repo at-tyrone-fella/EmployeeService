@@ -85,7 +85,10 @@ app.post('/add', (req, res) => {
 //Edit Feature added below.
  
 app.get('/edit', (req, res) => {
-  res.render('edit');
+  const data = {
+    error: ""
+  }
+  res.render('edit', data);
 });
  
 app.post('/edit' , (req,res) => {
@@ -99,7 +102,7 @@ const employeeRole = `"${result.employeeRole}"`
 
 if(employeeName == "" || employeeAddress == "" || employeeSalary == "" || employeeRole == "")
 {
-  res.redirect('/viewEmployee')
+  res.redirect("/viewEmployee")
 }else{
 const insertQuery = `UPDATE Employee SET Name = ${employeeName}, Address = ${employeeAddress}, Role = ${employeeRole}, Employee_Number = ${employeeNum}, Salary = ${employeeSalary} WHERE Employee.Employee_Number = ${employeeNum}`;
 
