@@ -18,3 +18,8 @@ h2{
 body{
     background-color:rgb(6, 6, 102)  ;
 }
+
+form {
+    border-radius: 10px; /* Adjust the border radius as needed */
+    width: 100%;
+  }

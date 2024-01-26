@@ -4,5 +4,17 @@
     width: 20%;
     padding: 10px;
     margin-left: 38%;
-    }
+}
+
+.loginButton{
+    margin-top: 10px;
+    background-color: rgb(101, 219, 101);
+    width: 20%;
+    padding: 10px;
+    margin-left: 38%;
+    border-radius: 10px;
+}
+
+
+   
    
