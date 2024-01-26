@@ -4,5 +4,9 @@
     width: 20%;
     padding: 10px;
     margin-left: 38%;
+    border-radius: 10px;
     }
    
+    .header{
+        background-color: white;
+    }

@@ -2,19 +2,27 @@
     width: 50%;
     margin-top: 10%;
     margin-left: 30%;
- 
-
 }
 
 h2{
     width: 50%;
     margin-top: 10%;
-    margin-left: 35%;
+    margin-left: 40%;
     padding: 10px;
     color: white;
   
 }
 
-body{
-    background-color:rgb(6, 6, 102)  ;
+html, body{
+    background-image:linear-gradient(rgb(6, 6, 102) ,rgb(101, 219, 101))  ;
+    height: 100%;
 }
+
+form {
+    border-radius: 10px; /* Adjust the border radius as needed */
+    width: 100%;
+  }
+
+ 
+
+  
