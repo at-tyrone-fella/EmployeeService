@@ -55,3 +55,14 @@ a {
   ::placeholder{
     font-size: 13px;
   }
+
+  html, body{
+    background-image:linear-gradient(rgb(6, 6, 102) ,rgb(101, 219, 101))  ;
+    height: 100%;
+    color: white;
+}
+table {
+  background-color: white;
+  color: black;
+}
+  

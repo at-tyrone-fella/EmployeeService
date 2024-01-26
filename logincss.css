@@ -5,7 +5,19 @@
     padding: 10px;
     margin-left: 38%;
     border-radius: 10px;
+<<<<<<< Updated upstream:logincss.css
     }
+=======
+}
+
+.header{
+    background-color: white;
+}
+
+
+
+   
+>>>>>>> Stashed changes:public/logincss.css
    
     .header{
         background-color: white;

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="public/logincss.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
+    <link rel="stylesheet" href="public/box.css"/>
+</head>
+<body>
+    <div class="header">
+        <img src="public/logo.jpg" alt="Kainos Logo" width="125px" height="100px">
+    </div>
+    <div class="container mycontent">
+ 
+
+ 
+        <div class="row">
+            <div class="col-sm-12 col-md-8">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h2>Log In </h2>
+                    </div>
+                </div>
+    
+          
+                <form action="/login" method="post">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Email</label>
+                      <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Email">
+                      <small id="emailHelp" class="form-text text-muted"> </small>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Password</label>
+                      <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                    </div>
+
+                   
+                    <button type="login" class = "loginButton btn btn-primary">Login</button>
+                  </form>
+
+
+</div>
+
+
+</body>
+</html>

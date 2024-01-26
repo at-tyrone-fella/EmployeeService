@@ -23,6 +23,13 @@ form {
     width: 100%;
   }
 
+<<<<<<< Updated upstream:box.css
  
 
   
+=======
+html, body{
+background-image:linear-gradient(rgb(6, 6, 102) ,rgb(101, 219, 101))  ;
+height: 100%;
+}
+>>>>>>> Stashed changes:public/box.css
