@@ -104,7 +104,6 @@ passport.serializeUser((user, done) => {
   done(null, user);
 });
 
-
 // Deserialize user from the session
 passport.deserializeUser((id, done) => {
   const user = users.find(u => u.id === id);
