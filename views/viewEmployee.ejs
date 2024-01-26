@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>View Employees</title>
     <link rel="stylesheet" href="/public/style.css" />
-
-</head>
-<body>
-
+  </head>
+  <body>
     <nav class="navbar">
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="viewEmployee">View Employees</a></li>
-          <li><a href="add">Add New Employee</a></li>
-        </ul>
-      </nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="viewEmployee">View Employees</a></li>
+        <li><a href="add">Add New Employee</a></li>
+        <li><a href="edit">Edit Information</a></li>
+      </ul>
+    </nav>
 
     <h1>All Employees</h1>
 
@@ -33,19 +32,16 @@
       </thead>
 
       <tbody>
-
         <% for (var i = 0; i < employees.length; i++) { %>
-            <tr>
-                <td><%= employees[i].Employee_Number %></td>
-                <td><%= employees[i].Name %></td>
-                <td><%= employees[i].Address %></td>
-                <td><%= employees[i].Role %></td>
-                <td>$<%= employees[i].Salary %></td>
-            </tr>
+        <tr>
+          <td><%= employees[i].Employee_Number %></td>
+          <td><%= employees[i].Name %></td>
+          <td><%= employees[i].Address %></td>
+          <td><%= employees[i].Role %></td>
+          <td>$<%= employees[i].Salary %></td>
+        </tr>
         <% } %>
-
       </tbody>
     </table>
-    
-</body>
+  </body>
 </html>
